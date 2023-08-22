@@ -3,6 +3,7 @@ $(document).ready(function () {
   const searchInput = $("#searchInput");
   const sortButton = $("#sortButton");
   const sortButtonReverse = $("#sortButtonReverse");
+  const dropdownButtonText = $("#dropdownButtonText");
   let usersData = []; // Store fetched users
   // Fetch users from the API
   $.get("https://jsonplaceholder.typicode.com/users", function (users) {
@@ -20,11 +21,15 @@ $(document).ready(function () {
 
     // Sort users alphabetically when button is clicked
     sortButton.on("click", function () {
+      var spanText = sortButton.text();
+      dropdownButtonText.text(spanText);
       usersData.sort((a, b) => a.name.localeCompare(b.name));
       displayUsers(usersData);
     });
     // Sort users reverse-alphabetically when button is clicked
     sortButtonReverse.on("click", function () {
+      var spanText = sortButtonReverse.text();
+      dropdownButtonText.text(spanText);
       usersData.sort((a, b) => a.name.localeCompare(b.name)).reverse();
       displayUsers(usersData);
     });

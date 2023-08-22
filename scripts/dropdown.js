@@ -1,5 +1,5 @@
 // Dropdown logic
-const button = document.getElementById("dropdownDelayButton");
+const button = document.getElementById("dropdownButton");
 const dropdown = document.getElementById("dropdownDelay");
 
 button.addEventListener("click", () => {
